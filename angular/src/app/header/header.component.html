@@ -1,0 +1,47 @@
+<div class="position-relative">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+
+    <button class="navbar-toggler collapsed" type="button" (click)="isMainMenuCollapsed = !isMainMenuCollapsed; isUserMenuCollapsed = true">
+      <span *ngIf="currentUser" class="navbar-toggler-icon"></span>
+    </button>
+
+    <a routerLink="/" class="navbar-brand" routerLinkActive="active">
+      <img src="/assets/common/images/logo-carnect.png" width="132" height="36" alt="Carnect">
+    </a>
+
+    <button class="navbar-toggler collapsed" type="button" (click)="isUserMenuCollapsed = !isUserMenuCollapsed; isMainMenuCollapsed = true">
+      <img class="avatar-img" src="https://www.gravatar.com/avatar/7ede25d6877d5e578260516777f41f58?s=60&r=g&d=mp" title="email@email.com">
+    </button>
+
+    <div class="collapse navbar-collapse mr-auto w-100 justify-content-start" [collapse]=isMainMenuCollapsed>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/item1" routerLinkActive="active">Item 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/item2">Item 2</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse mr-auto justify-content-end" [collapse]=isUserMenuCollapsed>
+      <ul *ngIf="currentUser" class="navbar-nav">
+        <li class="nav-item dropdown d-none d-lg-block" dropdown placement="bottom right">
+          <a id="user-menu-btn" class="nav-link dropdown-toggle" href dropdownToggle (click)="false">
+            <img class="avatar-img" src="https://www.gravatar.com/avatar/7ede25d6877d5e578260516777f41f58?s=60&r=g&d=mp" title="email@email.com"> {{currentUser?.email}}
+          </a>
+          <ul *dropdownMenu id="user-menu" class="dropdown-menu dropdown-menu-right" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="/logout">Logout</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <ngx-loading-bar [includeSpinner]="false" [height]="'5px'" [fixed]="false"></ngx-loading-bar>
+</div>

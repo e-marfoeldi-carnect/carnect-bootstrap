@@ -1,0 +1,267 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/carnect.min.css">
+	<style>
+		.display-flex { display:flex;}
+	</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainMenuContent2" aria-controls="mainMenuContent2" aria-expanded="false" aria-label="Toggle navigation">
+            <span *ngIf="currentUser" class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo-carnect.png" width="132" height="36" alt="Carnect">
+        </a>
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#userMenuContent2" aria-controls="userMenuContent2" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="https://www.gravatar.com/avatar/7ede25d6877d5e578260516777f41f58?s=60&r=g&d=mp" class="avatar-img" title="Title">
+        </button>
+
+        <div class="collapse navbar-collapse mr-auto w-100 justify-content-start" id="mainMenuContent2">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu Item 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu Item 2</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse mr-auto justify-content-start" id="userMenuContent2">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown d-none d-lg-block">
+                    <a id="user-menu-btn" class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://www.gravatar.com/avatar/7ede25d6877d5e578260516777f41f58?s=60&r=g&d=mp" class="avatar-img" title="Title"> user@carnect.com
+                    </a>
+                    <ul id="user-menu" class="dropdown-menu dropdown-menu-right" role="menu">
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+	<!-- Content wrapper -->
+	<div style="background:#f8f8f8;">
+		<div class="py-4 px-3"> 
+			<div class="example-selection display-flex flex-wrap my-4 collapse show">
+				<h2 class="align-self-start mr-auto" style="font-size:1.5rem">9199 items</h2>
+				<div>
+					<div class="table-actions">
+						<!-- add .expanded to the button to change state -->
+						<button type="button" class="btn-filter btn btn-outline-secondary dropdown-toggle ml-md-2 mb-2" data-toggle="collapse" href="#filter"><span class="icon-filter-list"></span> Filter </button>
+						<button type="button" class="btn btn-success ml-2 mb-2" data-toggle="modal" data-target="#exampleModal"><span class="icon-add"></span> Add Item</button>
+						<div class="btn-group btn-others ml-2 mb-2">
+							<button type="button" aria-controls="dropdown-actions" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-more-horiz"></span></button>
+							<div class="dropdown-menu dropdown-menu-right">
+								<button class="dropdown-item" type="button">Action</button>
+								<button class="dropdown-item" type="button">Another action</button>
+								<button class="dropdown-item" type="button">Something else here</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="example-selection display-flex flex-wrap my-4 collapse">
+				<h2 class="align-self-start mr-auto header is-selected" style="color:#999;font-size:1.5rem"><span style="color: #000">10 selected</span><span> from</span> 9199 items</h2>
+				<div>
+					<div class="table-actions">
+						<button type="button" class="btn btn-primary ml-md-2 mb-2">Update</button>
+						<button type="button" class="btn btn-primary ml-md-2 mb-2">Delete</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="collapse mb-4" id="filter">
+				<form novalidate="" class="form" aria-hidden="false">
+
+					<div class="form-row align-items-end">
+						<div class="col-2">
+							<label for="filter1">Filter 1</label>
+							<input type="text" class="form-control" id="filter1">
+						</div>
+						<div class="col-2">
+							<label for="filter2">Filter 2</label>
+							<input type="text" class="form-control" id="filter2">
+						</div>
+						<div class="col-2">
+							<label for="filter3">Filter 3</label>
+							<input type="text" class="form-control" id="filter3">
+						</div>
+						<div class="col-2">
+							<label for="filter4">Filter 4</label>
+							<input type="text" class="form-control" id="filter4">
+						</div>
+						<div class="col-2">
+							<label for="filter5">Filter 5</label>
+							<input type="text" class="form-control" id="filter5">
+						</div>
+
+						<div class="col-2">
+							<button class="btn btn-primary mr-2">Apply filters</button>
+							<button class="btn btn-light">Reset</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="table-responsive">
+				<table role="grid" class="table data-table table-striped">
+					<thead class="table-head">
+						<tr role="row" class="header-row">
+							<th class="border-top-0">
+								<div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+									<input type="checkbox" class="custom-control-input" id="items-check-all">
+									<label class="custom-control-label" for="items-check-all"></label>
+								</div>
+							</th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Type</span></th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Priority</span></th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Rate</span></th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Currency</span></th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Supplier</span></th>
+							<th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Affiliate</span></th>
+							<th class="border-top-0 sort-active"><span class="title sortable" style="cursor: pointer;">Updated at</span><span class="sort-icon icon-keyboard-arrow-down"></span></th>
+							<th class="border-top-0 text-center"><span class="title sortable" style="cursor: pointer;">Status</span></th>
+						</tr>
+					</thead>
+						
+					<tbody class="table-body">
+						<tr class="entry-content">
+							<td>
+								<div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+									<input type="checkbox" id="item1" class="custom-control-input">
+									<label class="custom-control-label" for="item1"></label>
+								</div>
+							</td>
+							<td>Percentage discount</td>
+							<td>9</td>
+							<td>23%</td>
+							<td>EUR</td>
+							<td>Sixt</td>
+							<td>mietwagen-auf-mallorca.de</td>
+							<td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+							<td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+						</tr>
+						<tr class="entry-content">
+							<td>
+								<div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+									<input type="checkbox" id="item2" class="custom-control-input">
+									<label class="custom-control-label" for="item2"></label>
+								</div>
+							</td>
+							<td>Percentage discount</td>
+							<td>9</td>
+							<td>23%</td>
+							<td>EUR</td>
+							<td>Sixt</td>
+							<td>mietwagen-auf-mallorca.de</td>
+							<td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+							<td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+						</tr>
+						<tr class="entry-content">
+							<td>
+								<div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+									<input type="checkbox" id="item3" class="custom-control-input">
+									<label class="custom-control-label" for="item3"></label>
+								</div>
+							</td>
+							<td>Percentage discount</td>
+							<td>9</td>
+							<td>23%</td>
+							<td>EUR</td>
+							<td>Sixt</td>
+							<td>mietwagen-auf-mallorca.de</td>
+							<td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+							<td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+						</tr>
+					</tbody>
+				</table>
+			
+				<div class="container-fluid">
+					<div class="row">
+						<nav aria-label="Page navigation example" class="col d-flex justify-content-center">
+						  <ul class="pagination">
+							<li class="page-item"><a class="page-link" href="#">First</a></li>
+							<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item active"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">Next</a></li>
+							<li class="page-item"><a class="page-link" href="#">Last</a></li>
+						  </ul>
+						</nav>
+						<div class="col-auto">
+							<select class="custom-select">
+								<option value="10">10</option>
+								<option value="25">25</option>
+								<option value="50">50</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade sticky" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sidebar modal-lg">
+		<div class="modal-content">
+			<div class="modal-form-wrapper">
+			  <div class="modal-header">
+				<h4 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				<div class="modal-body-content">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label>Field 1 <span class="mandatory">*</span></label>
+								<input type="text" id="field1" class="form-control" placeholder="Please enter">
+							</div>
+							<div class="form-group">
+								<label>Field 2</label>
+								<input type="text" id="field2" class="form-control is-invalid" placeholder="Please enter">
+								<div class="invalid-feedback">Please fill</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label>Field 3</label>
+								<input type="text" id="field3" class="form-control" placeholder="Please enter">
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-success btn-modal-submit">Save changes</button>
+			  </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+		
+	
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>

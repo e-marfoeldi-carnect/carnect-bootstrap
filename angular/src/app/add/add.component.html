@@ -1,0 +1,59 @@
+<div class="modal fade sticky"
+     bsModal #modal="bs-modal"
+     [config]="{ backdrop: 'static', show: true, animated: true, keyboard: true, ignoreBackdropClick: true }"
+     (onHidden)="onHidden()"
+     tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sidebar modal-lg">
+    <div class="modal-content">
+      <div class="modal-form-wrapper">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Modal title</h4>
+            <button type="button" class="close" (click)="modal.hide()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-body-content">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Field 1 <span class="mandatory">*</span></label>
+                  <input type="text" id="field1" class="form-control" placeholder="Please enter">
+                </div>
+                <div class="form-group">
+                  <label>Field 2</label>
+                  <input type="text" id="field2" class="form-control is-invalid" placeholder="Please enter">
+                  <div class="invalid-feedback">Please fill</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Field 3</label>
+                  <input type="text" id="field3" class="form-control" placeholder="Please enter">
+                </div>
+                <div class="form-group">
+                  <label>Field 4</label>
+                  <ng-select [(ngModel)]="selected" class="bootstrap-theme">
+                    <ng-option [value]="'affiliate1'">Custom</ng-option>
+                    <ng-option [value]="'affiliate2'">Custom</ng-option>
+                    <ng-template ng-option-tmp let-item="item">
+                      <span class="badge badge-secondary">123</span> {{item}}
+                    </ng-template>
+
+                    <ng-template ng-label-tmp let-item="item">
+                      <span class="badge badge-secondary">1</span> {{item}}
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" (click)="modal.hide()">Close</button>
+          <button type="button" class="btn btn-success btn-modal-submit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+<cnx-header></cnx-header>
+
+<div class="content-wrapper">
+  <div class="py-4 px-3">
+    <div class="d-flex flex-wrap mb-4">
+      <h2 class="align-self-start mr-auto" style="font-size:1.5rem">9199 items</h2>
+      <div>
+        <div class="table-actions">
+          <button type="button" class="btn-filter btn btn-outline-secondary dropdown-toggle ml-md-2 mb-2" [ngClass]="{'expanded': isFilterExpanded}" (click)="toggleFilter()"><span class="icon-filter-list"></span> Filter </button>
+          <button type="button" class="btn btn-success ml-2 mb-2" routerLink="add"><span class="icon-add"></span> Add Item</button>
+
+          <div class="btn-group btn-others ml-2 mb-2" dropdown placement="bottom right">
+            <button type="button" dropdownToggle aria-controls="dropdown-actions" class="btn btn-light" aria-haspopup="true" aria-expanded="false"><span class="icon-more-horiz"></span></button>
+            <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-actions">
+              <li role="menuitem"><a class="dropdown-item" href="#" >Action</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <form novalidate="" class="form" aria-hidden="false" [collapse]="!isFilterExpanded" *ngIf="isFilterActivated">
+
+        <div class="form-row align-items-end">
+          <div class="col-2">
+            <label for="filter1">Filter 1</label>
+            <input type="text" class="form-control" id="filter1">
+          </div>
+          <div class="col-2">
+            <label for="filter2">Filter 2</label>
+            <input type="text" class="form-control" id="filter2">
+          </div>
+          <div class="col-2">
+            <label for="filter3">Filter 3</label>
+            <input type="text" class="form-control" id="filter3">
+          </div>
+          <div class="col-2">
+            <label for="filter4">Filter 4</label>
+            <input type="text" class="form-control" id="filter4">
+          </div>
+          <div class="col-2">
+            <label for="filter5">Filter 5</label>
+            <input type="text" class="form-control" id="filter5">
+          </div>
+
+          <div class="col-2">
+            <button class="btn btn-primary mr-2">Apply filters</button>
+            <button class="btn btn-light">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="table-responsive">
+      <table role="grid" class="table data-table table-striped">
+        <thead class="table-head">
+        <tr role="row" class="header-row">
+          <th class="border-top-0">
+            <div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+              <input type="checkbox" class="custom-control-input" id="items-check-all">
+              <label class="custom-control-label" for="items-check-all"></label>
+            </div>
+          </th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Type</span></th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Priority</span></th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Rate</span></th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Currency</span></th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Supplier</span></th>
+          <th class="border-top-0"><span class="title sortable" style="cursor: pointer;">Affiliate</span></th>
+          <th class="border-top-0 sort-active"><span class="title sortable" style="cursor: pointer;">Updated at</span><span class="sort-icon icon-keyboard-arrow-down"></span></th>
+          <th class="border-top-0 text-center"><span class="title sortable" style="cursor: pointer;">Status</span></th>
+        </tr>
+        </thead>
+
+        <tbody class="table-body">
+        <tr class="entry-content">
+          <td>
+            <div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+              <input type="checkbox" id="item1" class="custom-control-input">
+              <label class="custom-control-label" for="item1"></label>
+            </div>
+          </td>
+          <td>Percentage discount</td>
+          <td>9</td>
+          <td>23%</td>
+          <td>EUR</td>
+          <td>Sixt</td>
+          <td>mietwagen-auf-mallorca.de</td>
+          <td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+          <td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+        </tr>
+        <tr class="entry-content">
+          <td>
+            <div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+              <input type="checkbox" id="item2" class="custom-control-input">
+              <label class="custom-control-label" for="item2"></label>
+            </div>
+          </td>
+          <td>Percentage discount</td>
+          <td>9</td>
+          <td>23%</td>
+          <td>EUR</td>
+          <td>Sixt</td>
+          <td>mietwagen-auf-mallorca.de</td>
+          <td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+          <td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+        </tr>
+        <tr class="entry-content">
+          <td>
+            <div class="custom-control custom-checkbox" data-toggle="collapse" data-target=".example-selection">
+              <input type="checkbox" id="item3" class="custom-control-input">
+              <label class="custom-control-label" for="item3"></label>
+            </div>
+          </td>
+          <td>Percentage discount</td>
+          <td>9</td>
+          <td>23%</td>
+          <td>EUR</td>
+          <td>Sixt</td>
+          <td>mietwagen-auf-mallorca.de</td>
+          <td><time title="Tuesday, 26 April 2022 02:05" datetime="2022-04-26T02:05:01+02:00"> 26/04/2022 </time></td>
+          <td class="text-center"><span class="badge badge-success" title="Active"><span class="icon-check"></span></span></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="col d-flex justify-content-center">
+            <pagination
+              [totalItems]="150"
+              [itemsPerPage]="10"
+              [maxSize]="5"
+              [boundaryLinks]="true"
+              [rotate]="true">
+            </pagination>
+          </nav>
+          <div class="col-auto">
+            <select class="custom-select">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

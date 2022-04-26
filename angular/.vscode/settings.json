@@ -1,0 +1,19 @@
+{
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.prettierPath": "node_modules\\prettier",
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.configFile": ".stylelintrc.json",
+  "scss.validate": false,
+  "stylelint.stylelintPath": "node_modules\\stylelint"
+}
