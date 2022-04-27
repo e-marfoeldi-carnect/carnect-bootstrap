@@ -1,3 +1,5 @@
+# Carnect Boilerplate
+
 This repo contains two projects:
 * Angular
 * Pure JS
